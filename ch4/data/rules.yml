@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Fetching the currency data
+  steps:
+  - intent: get_currency_rates
+  - action: action_get_currency_rates
+
+- rule:  FAQ
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+
+- rule: Followup card replacement
+  steps:
+  - intent: followup_lost_card_card_replacement
+  - action: utter_followup_lost_card_card_replacement
+ 
+- rule: Followup digital wallet
+  steps:
+  - intent: followup_lost_card_digital_wallet
+  - action: utter_followup_lost_card_digital_wallet
+ 

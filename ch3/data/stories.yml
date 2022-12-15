@@ -1,0 +1,139 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: transfer
+  - action: transfer_form
+  - active_loop: transfer_form
+  - slot_was_set:
+    - requested_slot: beneficiary
+  - slot_was_set:
+    - beneficiary: Andrew
+  - slot_was_set:
+    - requested_slot: monetary_amount
+  - slot_was_set:
+    - monetary_amount: 1000 $
+  - slot_was_set:
+    - requested_slot: transfer_title
+  - slot_was_set:
+    - transfer_title: Just whatever
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_run_transfer
+
+
+- story: interactive_story_1
+  steps:
+  - intent: transfer
+  - action: transfer_form
+  - active_loop: transfer_form
+  - slot_was_set:
+    - requested_slot: beneficiary
+  - slot_was_set:
+    - beneficiary: Andrew
+  - slot_was_set:
+    - requested_slot: monetary_amount
+  - slot_was_set:
+    - monetary_amount: 1000 $
+  - slot_was_set:
+    - requested_slot: transfer_title
+  - slot_was_set:
+    - transfer_title: Just whatever
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+
+- story: interactive_story_2
+  steps:
+  - intent: transfer
+  - action: transfer_form
+  - active_loop: transfer_form
+  - slot_was_set:
+    - requested_slot: beneficiary
+  - slot_was_set:
+    - beneficiary: Peter 
+  - slot_was_set:
+    - requested_slot: monetary_amount
+  - slot_was_set:
+    - monetary_amount: 10 $
+  - slot_was_set:
+    - requested_slot: transfer_title
+  - slot_was_set:
+    - transfer_title: big big money
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_run_transfer
+  - slot_was_set:
+    - beneficiary: null
+  - slot_was_set:
+    - monetary_amount: null
+  - slot_was_set:
+    - transfer_title: null
+  - intent: get_currency_rates
+  - action: action_get_currency_rates
+  - intent: faq
+  - action: utter_faq
+  - intent: followup_lost_card_digital_wallet
+  - action: utter_followup_lost_card_digital_wallet
+
+- story: interactive_story_3
+  steps:
+  - intent: transfer
+  - action: transfer_form
+  - active_loop: transfer_form
+  - slot_was_set:
+    - requested_slot: beneficiary
+  - slot_was_set:
+    - beneficiary: Mary
+  - slot_was_set:
+    - requested_slot: monetary_amount
+  - slot_was_set:
+    - monetary_amount: 20 $
+  - slot_was_set:
+    - requested_slot: transfer_title
+  - slot_was_set:
+    - transfer_title: Just whatever title
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_run_transfer
+  - slot_was_set:
+    - beneficiary: null
+  - slot_was_set:
+    - monetary_amount: null
+  - slot_was_set:
+    - transfer_title: null
+  - intent: get_currency_rates
+  - action: action_get_currency_rates
+  - intent: goodbye
+  - action: utter_goodbye

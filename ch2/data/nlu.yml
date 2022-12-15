@@ -1,0 +1,119 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: get_currency_rates
+  examples: |
+    - Give me the forex rates
+    - show me the currency data
+    - how much is the american dollar worth?
+    - give me the data on euro
+    - what is the price for GBP?
+    - how much does the ruble cost?
+    - rupeee price
+    - dollar
+    - yen price
+
+- intent: faq/lost_card
+  examples: |
+    - I have lost my credit card
+    - my debit card has been stolen
+    - please help, I cant find my credit card
+    - what to do if ive lost my credit card in the park
+    - my wallet has been stolen, and my credit card was in it, what can I do?
+
+- intent: faq/changing_personal_data
+  examples: |
+    - How can I alter my address in the bank?
+    - ive moved, and want to update my personal data
+    - I have changed my name, and want to update the banking info
+    - I'd like to change my email address with the bank
+ 

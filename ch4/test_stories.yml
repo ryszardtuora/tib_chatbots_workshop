@@ -1,0 +1,32 @@
+stories:
+- story: basic end-to-end test
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_currency_rates
+  - action: action_get_currency_rates
+  - intent: transfer
+    entities:
+    - person_name: Michael
+  - action: transfer_form
+  - active_loop: transfer_form
+  - slot_was_set:
+    - beneficiary: Michael
+  - slot_was_set:
+    - monetary_amount: 200 £
+  - slot_was_set:
+    - requested_slot: transfer_title
+  - slot_was_set:
+    - transfer_title: Thanks for the game last tuesday!
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_run_transfer
+  - slot_was_set:
+    - beneficiary: null
+  - slot_was_set:
+    - monetary_amount: null
+  - slot_was_set:
+    - transfer_title: null
+  - intent: goodbye
+  - action: utter_goodbye
